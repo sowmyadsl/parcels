@@ -1,4 +1,12 @@
 
 <h2><%= @message %></h2>
 <hr>
-<a href="/" class="btn btn-danger">new package</a>
+<ul>
+<% total = 0 %>
+<% @parcels.each do |parcel| %>
+  <%= "<li>Parcel #{parcel.height} inches tall: $#{parcel.cost_to_ship}</li>" %>
+  <% total += parcel.cost_to_ship %>
+<% end %>
+<h2>your total is $<%= total %></h2>
+<a href="/" class="btn btn-success">new package</a>
+<a href="/clear" class="btn btn-danger">clear cart</a>

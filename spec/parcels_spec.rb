@@ -25,3 +25,12 @@ describe 'Parcels#cost_to_ship' do
   end
 
 end
+
+describe 'Parcels#add_parcel' do
+
+  it "add parcel to the parcels array" do
+    newparcel = Parcels.new(50,50,50,20)
+    newparcel.add_parcel
+    expect(Parcels.all).to eq [newparcel]
+  end
+end
